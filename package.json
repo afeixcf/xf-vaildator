@@ -1,6 +1,6 @@
 {
-  "name": "xf-vaildator",
-  "version": "1.0.1",
+  "name": "xf-validator",
+  "version": "1.0.0",
   "description": "修复一个bug",
   "main": "index.js",
   "scripts": {
