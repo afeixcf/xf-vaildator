@@ -26,9 +26,16 @@ var strategies = {
     }
 };
 
+/**
+ * 
+ * @param {*} o startegies:新增或复写策略对象 end:验证不通过就结果验证
+ * 
+ */
+
 function Validator(o) {
     this.caches = [];
     this.strategies = Object.assign({}, strategies, o && o.strategies || {});
+    this.end = typeof o.end === 'boolean' ? o.end : false;
 }
 
 Validator.prototype.add = function (val, rule, msg) {
@@ -47,7 +54,13 @@ Validator.prototype.check = function () {
     for (var i = 0; i < this.caches.length; i++) {
         var msg = this.caches[i]();
 
-        msg && messages.push(msg);
+        if (!msg) continue;
+
+        if (this.end) {
+            return msg;
+        } else {
+            messages.push(msg);
+        }
     }
 
     return messages;

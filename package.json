@@ -1,7 +1,7 @@
 {
   "name": "xf-validator",
-  "version": "1.0.0",
-  "description": "修复一个bug",
+  "version": "1.0.1",
+  "description": "设置终止参数",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
